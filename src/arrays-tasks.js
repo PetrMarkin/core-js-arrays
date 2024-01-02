@@ -37,8 +37,34 @@ function getIntervalArray(start, end) {
  *    sumArrays([10, 20, 30], [5, 10, 15]) => [15, 30, 45]
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
-function sumArrays(/* arr1, arr2 */) {
-  throw new Error('Not implemented');
+function sumArrays(arr1, arr2) {
+  const res = [];
+  if (arr1.length >= arr2.length) {
+    arr1.map(function x(value, index) {
+      let num1 = value;
+      let num2 = arr2[index];
+      if (value === undefined) {
+        num1 = 0;
+      }
+      if (arr2[index] === undefined) {
+        num2 = 0;
+      }
+      return res.push(num1 + num2);
+    });
+  } else {
+    arr2.map(function x(value, index) {
+      let num1 = value;
+      let num2 = arr1[index];
+      if (value === undefined) {
+        num1 = 0;
+      }
+      if (arr1[index] === undefined) {
+        num2 = 0;
+      }
+      return res.push(num1 + num2);
+    });
+  }
+  return res;
 }
 
 /**
@@ -617,8 +643,18 @@ function sortDigitNamesByNumericOrder(arr) {
  *   swapHeadAndTail([]) => []
  *
  */
-function swapHeadAndTail(/* arr */) {
-  throw new Error('Not implemented');
+function swapHeadAndTail(arr) {
+  const arr1 = arr.slice(0, arr.length / 2);
+  let arr2 = arr.slice(arr.length / 2, arr.length);
+  if (arr.length % 2 === 0) {
+    return arr2.concat(arr1);
+  }
+  if (!arr.length) {
+    return [];
+  }
+  arr2 = arr.slice(arr.length / 2 + 1, arr.length);
+  arr2.push(arr[arr.length / 2 - 0.5]);
+  return arr2.concat(arr1);
 }
 
 module.exports = {
