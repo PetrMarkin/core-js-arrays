@@ -341,7 +341,7 @@ function calculateBalance(arr) {
  */
 function createChunks(arr, chunkSize) {
   const res = [];
-  arr.map(function (e, index) {
+  arr.map(function x(e, index) {
     if (index % chunkSize === 0) {
       res.push(arr.slice(index, index + chunkSize));
     }
@@ -423,8 +423,8 @@ function getFalsyValuesCount(arr) {
  *                              [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return new Array(n).fill(0).map(function (a, i) {
-    return new Array(n).fill(0).map(function (b, j) {
+  return new Array(n).fill(0).map(function x(a, i) {
+    return new Array(n).fill(0).map(function y(b, j) {
       return i === j ? 1 : 0;
     });
   });
@@ -443,7 +443,7 @@ function getIdentityMatrix(n) {
  */
 function getIndicesOfOddNumbers(numbers) {
   const res = [];
-  numbers.map(function (e, i) {
+  numbers.map(function x(e, i) {
     return e % 2 !== 0 ? res.push(i) : null;
   });
   return res;
@@ -501,7 +501,7 @@ function getMaxItems(arr, n) {
  */
 function findCommonElements(arr1, arr2) {
   const res = [];
-  arr1.map(function (e) {
+  arr1.map(function x(e) {
     return arr2.includes(e) ? res.push(e) : null;
   });
   return res;
@@ -521,7 +521,7 @@ function findCommonElements(arr1, arr2) {
 function findLongestIncreasingSubsequence(nums) {
   let count = 1;
   const res = [];
-  nums.reduce(function (prev, curr) {
+  nums.reduce(function x(prev, curr) {
     if (curr > prev) {
       count += 1;
       res.push(count);
